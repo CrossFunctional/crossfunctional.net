@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta about="/blog/2013/mar/symfony-components-in-drupal-8" property="sioc:num_replies" content="7" datatype="xsd:integer" />
+<link rel="shortcut icon" href="../../../sites/crossfunctional.net/files/cf-favicon.png" type="image/png" />
+<meta content="You got Symfony in my Drupal 8!" about="/blog/2013/mar/symfony-components-in-drupal-8" property="dc:title" />
+<link rel="shortlink" href="../../../node/111.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="symfony-components-in-drupal-8.html" />
+  <title>You got Symfony in my Drupal 8! | CrossFunctional</title>
+  <link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css_GqCqCmGspWzZsDVTgkFoFb2eEt4xaByq4GFNcVi8QG4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css_K8fRaarJVpmwdJlS1tED2qb8vJSkBNe9xzCiZodamcg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css_PFzde6NqIgdmVfjBADu8ttXrb61q-mxDmige1zGFhzg.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie8fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie7fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie6fix.css?p90jql" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css_f_MG6Jv9JWcnBcICon4IsTrpeAm2jl0X-ecD7717aVo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/crossfunctional.net/files/css/css__BWCVzNEsJkW32fVyWsmX2bSyLsv8277P9OZnzVyNas.css" media="all" />
+  <script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_e2H87kgc6USbQwOBkQOCVF_Cr8KkwLd5XZ1OCW7BZb4.js"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_hDg2cAn4kQEMa_Y6cxLCtK3XsiwPV2KxtUxDJKNJ-kc.js"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_nkHDa6nOs0QuSV6WHpN1pLgWfLDXbkfXkxXdNqcMrCs.js"></script>
+<script type="text/javascript" src="../../../sites/all/modules/contrib/lightbox2/js/lightbox.js%3F1526796622"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_99Q09AjZ54KjEwsoZ2dR5zp5ECOzAMSU-ByeB6CWyAU.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-20691791-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_oBVHm9wQoh1hrl17v_Jw8IZ0qqRkjoFZK5GJ3mFjPvg.js"></script>
+<script type="text/javascript" src="../../../sites/all/libraries/tinymce/jscripts/tiny_mce/tiny_mce.js%3Fp90jql"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_JG5XjY4W6CKNZKiY9Ai4pSvcle4BNrGzCLHATtgRnxw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\u002F", "pathPrefix":"", "current_theme":"sooper_synopsis", "theme_path":"\u002Fsites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002F", "fontKit":{"invoke":"h1, h2, h3, h4, h5, h6, .cufon .content, p.mission, p.slogan, .views-field-title, legend:not(.collapse-processed)"}, "sooperfish":{"invoke":"#header \u003E div.inner \u003E ul.menu", "delay":"500", "dualColumn":"5", "tripleColumn":"12", "sooperfishWidth":"200", "speedShow":"500", "easingShow":"swing", "speedHide":"500", "easingHide":"swing"}, "slideshowKit":{"invoke":"div.slideshow div\u003Eul", "fx":"scrollHorz", "timeout":"8000", "continuous":"0", "speed":"500", "pagerEvent":"mouseover", "easing":"linear", "random":"0", "pause":"0", "pauseOnPagerHover":"1", "delay":"0"}, "ajaxPageState":{"theme":"sooper_synopsis", "theme_token":"y0rLVmT-m_vDVJeUwcxCmLPi0upCezwqixQOUUdYtQE", "js":{"sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter\u002Fsyntaxhighlighter.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Fwysiwyg.js":1, "misc\u002Fjquery.js":1, "misc\u002Fjquery.once.js":1, "misc\u002Fdrupal.js":1, "misc\u002Fui\u002Fjquery.ui.core.min.js":1, "misc\u002Fui\u002Fjquery.ui.widget.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert.utils.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert.js":1, "misc\u002Fui\u002Fjquery.ui.button.min.js":1, "misc\u002Fui\u002Fjquery.ui.mouse.min.js":1, "misc\u002Fui\u002Fjquery.ui.draggable.min.js":1, "misc\u002Fui\u002Fjquery.ui.position.min.js":1, "misc\u002Fui\u002Fjquery.ui.resizable.min.js":1, "misc\u002Fui\u002Fjquery.ui.dialog.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews\u002Fjs\u002Fjquery.ui.dialog.patch.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Fwysiwyg.init.js":1, "misc\u002Fform.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshCore.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshBrushPhp.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fjquery.easing-sooper.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Finvoke-twitter-cycle.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.equalHeights.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Fcufon-yui.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Ffonts\u002FSapir.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Finvoke-cufon.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Fjquery.sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Finvoke-sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Fjquery.cycle.all.min.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Finvoke-SlideshowKit.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fslidedown-behaviour.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.bgFade.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Fauto_image_handling.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Flightbox.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews_slideshow\u002Fjs\u002Fviews_slideshow.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fgoogle_analytics\u002Fgoogleanalytics.js":1, "0":1, "misc\u002Ftextarea.js":1, "http:\u002F\u002Fcrossfunctional.net\u002Fsites\u002Fcrossfunctional.net\u002Ffiles\u002Fjs\u002Fwysiwyg\u002Fwysiwyg_tinymce_FigIcIPs-hrlOsg5rRlHP_-i34bvHf3mmjhG6W2cuW0.js":1, "sites\u002Fall\u002Flibraries\u002Ftinymce\u002Fjscripts\u002Ftiny_mce\u002Ftiny_mce.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fjs\u002Ftinymce-3.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fjs\u002Fnone.js":1, "modules\u002Ffilter\u002Ffilter.js":1}, "css":{"modules\u002Fsystem\u002Fsystem.base.css":1, "modules\u002Fsystem\u002Fsystem.menus.css":1, "modules\u002Fsystem\u002Fsystem.messages.css":1, "modules\u002Fsystem\u002Fsystem.theme.css":1, "misc\u002Fui\u002Fjquery.ui.core.css":1, "misc\u002Fui\u002Fjquery.ui.theme.css":1, "misc\u002Fui\u002Fjquery.ui.button.css":1, "misc\u002Fui\u002Fjquery.ui.resizable.css":1, "misc\u002Fui\u002Fjquery.ui.dialog.css":1, "modules\u002Faggregator\u002Faggregator.css":1, "modules\u002Fcomment\u002Fcomment.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fdate\u002Fdate_api\u002Fdate.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fdate\u002Fdate_popup\u002Fthemes\u002Fdatepicker.1.7.css":1, "modules\u002Ffield\u002Ftheme\u002Ffield.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fmollom\u002Fmollom.css":1, "modules\u002Fnode\u002Fnode.css":1, "modules\u002Fsearch\u002Fsearch.css":1, "modules\u002Fuser\u002Fuser.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews\u002Fcss\u002Fviews.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fctools\u002Fcss\u002Fctools.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fcss\u002Flightbox.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsocial_media_links\u002Fsocial_media_links.css":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fstyles\u002FshCore.css":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fstyles\u002FshThemeDefault.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews_slideshow\u002Fviews_slideshow.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert_wysiwyg\u002Fsyntaxhighlighter_insert_wysiwyg.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fprint\u002Fcss\u002Fprintlinks.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fcss\u002Ftinymce-3.css":1, "modules\u002Ffilter\u002Ffilter.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie8fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie7fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie6fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Freset-preset.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fstyle.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fcustom.css":1, "sites\u002Fcrossfunctional.net\u002Ffiles\u002Fcto-sooper_synopsis.css":1}}, "lightbox2":{"rtl":0, "file_path":"\u002F(\u005Cw\u005Cw\u002F)public:\u002F", "default_image":"\u002Fsites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fimages\u002Fbrokenimage.jpg", "border_size":10, "font_color":"000", "box_color":"fff", "top_position":"", "overlay_opacity":"0.8", "overlay_color":"000", "disable_close_click":1, "resize_sequence":0, "resize_speed":400, "fade_in_speed":400, "slide_down_speed":600, "use_alt_layout":0, "disable_resize":1, "disable_zoom":0, "force_show_nav":0, "show_caption":1, "loop_items":0, "node_link_text":"View Image Details", "node_link_target":0, "image_count":"Image !current of !total", "video_count":"Video !current of !total", "page_count":"Page !current of !total", "lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\u002Fkbd\u003E\u003C\u002Fa\u003E to close", "download_link_text":"", "enable_login":false, "enable_contact":false, "keys_close":"c x 27", "keys_previous":"p 37", "keys_next":"n 39", "keys_zoom":"z", "keys_play_pause":"32", "display_image_size":"original", "image_node_sizes":"(\u005C.thumbnail)", "trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail", "trigger_lightbox_group_classes":"", "trigger_slideshow_classes":"", "trigger_lightframe_classes":"", "trigger_lightframe_group_classes":"", "custom_class_handler":0, "custom_trigger_classes":"", "disable_for_gallery_lists":1, "disable_for_acidfree_gallery_lists":true, "enable_acidfree_videos":true, "slideshow_interval":5000, "slideshow_automatic_start":0, "slideshow_automatic_exit":0, "show_play_pause":1, "pause_on_next_click":0, "pause_on_previous_click":1, "loop_slides":0, "iframe_width":600, "iframe_height":400, "iframe_border":1, "enable_video":0}, "syntaxhighlighter_insert_wysiwyg":{"current_form":"form-u-DMSV5bWoJgBeweQFUnaZ4_KmtVu0Kuh9Qevo9vFIc"}, "googleanalytics":{"trackOutbound":1, "trackMailto":1, "trackDownload":1, "trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}, "wysiwyg":{"configs":{"tinymce":{"formatfiltered_html":{"button_tile_map":true, "document_base_url":"\u002F", "mode":"none", "plugins":"", "theme":"advanced", "width":"100%", "strict_loading_mode":true, "convert_urls":false, "entities":"160,nbsp,173,shy,8194,ensp,8195,emsp,8201,thinsp,8204,zwnj,8205,zwj,8206,lrm,8207,rlm", "theme_advanced_resize_horizontal":false, "theme_advanced_resizing_use_cookie":false, "theme_advanced_statusbar_location":"bottom", "theme_advanced_resizing":1, "theme_advanced_toolbar_location":"top", "theme_advanced_toolbar_align":"left", "theme_advanced_buttons1":"", "theme_advanced_buttons2":"", "theme_advanced_buttons3":""}}}, "plugins":[  ], "disable":"Disable rich-text", "enable":"Enable rich-text", "triggers":{"edit-comment-body-und-0-format--2":{"field":"edit-comment-body-und-0-value", "formatfiltered_html":{"editor":"tinymce", "status":1, "toggle":1, "resizable":1}, "formatplain_text":{"editor":"none", "status":1, "toggle":1, "resizable":1}}}}});
+//--><!]]>
+</script>
+  <style type="text/css">
+  .postblockscolor .block {
+width:100%;
+}.sidebar {width: 31.999%;}
+#main .main-inner .sooper-mast { background-position: 31.999% 0; }
+#main .main-inner .wrapcolumns { background-position: 68.101% 0; }
+#content {width: 68%;}  </style>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-111 node-type-blog" >
+  <div id="skip-link" class="element-invisible">
+    <a href="symfony-components-in-drupal-8.html#main-content">Skip to main content</a>
+  </div>
+      
+  <div id="header" class="sooper-full">
+    <div class="inner sooper-mast clearfix header-inner">
+          <a href="../../../index.html" title=""><img src="../../../sites/crossfunctional.net/files/cf-logo-transparent_1.png" alt="Logo" class="logo"/></a>
+    
+    
+    
+          <ul class="menu"><li class="first leaf"><a href="../../../index.html"><span class="tab">Home</span></a></li>
+<li class="leaf"><a href="../../../page/about-us.html"><span class="tab">About Us</span></a></li>
+<li class="leaf"><a href="../../../portfolio.html" title=""><span class="tab">Portfolio</span></a></li>
+<li class="last leaf"><a href="../../../blog.html" title=""><span class="tab">Blog</span></a></li>
+</ul>        </div><!-- end #header-inner -->
+  </div><!-- end #header -->
+
+  
+  
+  
+  <div id="main" class="sooper-full">
+    <div class="main-inner sooper-mast clearfix inner">
+
+    <div class="wrapcolumns">
+    
+    <div id="content"><div class="inner content-inner">
+      
+      
+        <a name="content"></a>
+                  <h1 class="content title" id="content-title">You got Symfony in my Drupal 8!</h1>
+        
+        
+        
+        
+          <div class="region region-content">
+    <div id="block-system-main" class="block block-system block-system region-odd odd region-count-1 count-1 first last"><div class="block-inner">
+
+
+  <div class="content">
+    <div class="ds-1col node node-blog view-mode-full clearfix ">
+
+  
+  <span class="author">Geoffrey</span><span class="post-date">14 March 2013</span><div class="service-links"><a href="http://twitter.com/share?url=http%3A//crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8&amp;text=You%20got%20Symfony%20in%20my%20Drupal%208%21" title="Share this on Twitter" class="service-links-twitter" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/twitter.png" alt="Twitter logo" /></a> <a href="http://www.facebook.com/sharer.php?u=http%3A//crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8&amp;t=You%20got%20Symfony%20in%20my%20Drupal%208%21" title="Share on Facebook" class="service-links-facebook" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/facebook.png" alt="Facebook logo" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A//crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8&amp;title=You%20got%20Symfony%20in%20my%20Drupal%208%21&amp;summary=%2Aupdated%20to%20include%20clarification%20about%20DI%2AIf%20you%E2%80%99re%20working%20with%20Drupal%2C%20you%E2%80%99re%20probably%20aware%20that%20the%20next%20major%20release%20of%20Drupal%20is%20going%20to%20integrate%20with%20the%20wider%20PHP%20ecosystem%20in%20a%20big%20way.%20Its%20adoption%20of%20Symfony%20is%20a%20really%20big%20deal%2C%20not%20just%20for%20Drupal%20developers%20who%20will%20have%20a%20lot%20to%20learn%2C%20with%20access%20to%20a%20huge%20stable%20of%20components%20as%20a%20trade-off.%20It%E2%80%99s%20also%20a%20big%20deal%20for%20Symfony%20developers%2C%20who%20have%20a%20whole%20new%20platform%20to%20develop%20for%2C%20and%20also%20the%20PHP%20community%20at%20large%2C%20who%20Drupal%20developers%20are%20now%20able%20to%20contribute%20to%20at%20a%20much%20deeper%20level.%26nbsp%3BWe%20had%20a%20look%20around%20for%20a%20comprehensive%20list%20of%20Symfony%20components%20that%20are%20going%20to%20be%20in%20Drupal%208%2C%20but%20we%20couldn%E2%80%99t%20really%20find%20one%20that%20was%20up%20to%20date.%20For%20your%20benefit%2C%20here%E2%80%99s%20a%20list%20we%20put%20together%20that%20outlines%20the%20current%20list%20of%20Symfony%20components%20used%20in%20Drupal%208.&amp;source=CrossFunctional" title="Publish this post to LinkedIn" class="service-links-linkedin" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/linkedin.png" alt="LinkedIn logo" /></a> <a href="https://plus.google.com/share?url=http%3A//crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8" title="Share this on Google+" class="service-links-google-plus" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/google_plus.png" alt="Google+ logo" /></a> <a href="http://bookmarks.yahoo.com/myresults/bookmarklet?u=http%3A//crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8&amp;t=You%20got%20Symfony%20in%20my%20Drupal%208%21" title="Bookmark this post on Yahoo" class="service-links-yahoo" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/yahoo.png" alt="Yahoo logo" /></a> <a href="../../../print/blog/2013/mar/symfony-components-in-drupal-8.html" title="Printable version" class="service-links-print" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/service_links/images/print.png" alt="Print HTML logo" /></a></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><strong>*updated to include clarification about DI*</strong></p><p>If you’re working with Drupal, you’re probably aware that the next major release of Drupal is going to integrate with the wider PHP ecosystem in a big way. Its adoption of Symfony is a <em>really</em> big deal, not just for Drupal developers who will have a lot to learn, with access to a huge stable of components as a trade-off. It’s also a big deal for Symfony developers, who have a whole new platform to develop for, and also the PHP community at large, who Drupal developers are now able to contribute to at a much deeper level.&nbsp;</p><p>We had a look around for a comprehensive list of Symfony components that are going to be in Drupal 8, but we couldn’t really find one that was up to date. For your benefit, here’s a list we put together that outlines the current list of Symfony components used in Drupal 8.<br><!--break--></p><h2 dir="ltr">Symfony Components</h2><p>Here’s a list of all components in Symfony: <a href="http://symfony.com/doc/current/components/index.html">http://symfony.com/doc/current/components/index.html</a></p><p><a href="http://symfony.com/doc/current/components/index.html"></a>The Symfony Project <a href="http://symfony.com/blog/symfony2-meets-drupal-8" style="line-height: 1.538em;">first introduced its partnership with Drupal</a> with a post in March 2012 that discussed a few particular components that would power Drupal 8’s core:</p><ul><li dir="ltr"><strong>HttpFoundation and HttpKernel</strong><br>The move to Symfony was spearheaded by the <a href="http://groups.drupal.org/wscci">WSCCI (Web Services and Context Core Initiative)</a>, which wants to see the great concepts that Drupal is built upon running on top of a first-class REST server. This will allow Drupal to offer up its content via web services without so much messing about, and will generally make Drupal much more flexible, powerful and maintainable in the long run.<br><br></li><li dir="ltr"><strong>Routing</strong><br>This component maps a HTTP request to a set of configuration variables. From Drupal 8 onward, you’ll define your module’s routes in a YAML configuration file (more on this later) that lives alongside your module, and the individual routes set within it will refer to actions that are defined in your module’s classes. If you’re familiar with Drupal’s hook_menu, take note, because this is its successor.<br><br></li><li dir="ltr"><strong>EventDispatcher</strong><br>This implements the Observer pattern to enable a system-wide plugin system. This won’t completely replace Drupal’s hook system, and <a href="http://drupal.org/node/1509164">these will exist alongside each other until Drupal 9</a>. However, expect EventDispatcher to power a lot of the more core-level Drupal components.<br><br></li><li dir="ltr"><strong>DependencyInjection</strong><br>Dependency Injection is a way of writing code that keeps classes decoupled from each other so that they are reusable and unit-testable. The DI Container provides the infrastructure that allows these decoupled classes to interact with each other. Expect to see a lot of this as you see more Drupal 8 code popping up.<br><br></li><li dir="ltr"><strong>ClassLoader</strong><br>This loads project classes right when they are needed, if they are named and set up in directories that follow <a href="http://phpmaster.com/autoloading-and-the-psr-0-standard/">PHP’s PSR-0 interoperability principles</a>. This will help module developers out in a major way; there will be less worrying about module_load_include and similar dancing around to include dependencies, and more calling up classes at runtime to get things done.<br><br></li></ul><p>Since then, quite a few other Symfony components have been brought into Drupal, but they’re not really mentioned in one particular place. Poking through Drupal’s Composer requirements, you can find the following mentioned:</p><ul><li dir="ltr"><strong>Twig</strong><br style="font-weight: normal;">Themers take note,&nbsp;<a href="http://drupal.org/node/1499460" style="font-weight: normal;">Drupal 8 has a sweet new templating engine</a>. It was developed by Fabien Potencier, creator of the Symfony project, so we’re already assured that it will play nicely with Drupal’s Symfony components. If you’re going to be doing any theming in Drupal 8, check out Twig, you won’t regret it. (You might even look forward to it!)<br><br></li><li dir="ltr"><strong><a href="https://github.com/symfony/Validator">Validator</a></strong><br>This component lets Drupal validate values in a general sense. We’ll start to see this used to validate form submissions, as well as validating entities in general within Drupal. This component uses Doctrine Annotations, which we’ll discuss in more detail later.<br><br></li><li dir="ltr"><strong><a href="https://github.com/symfony/Translation">Translation</a></strong><br>Provides a standard set of tools for loading translation files, generating translated strings, and preparing them for use. Congratulations to Gábor and the <a href="http://groups.drupal.org/internationalization">Multilingual Initiative team</a> for getting this in!<br><br></li><li dir="ltr"><strong>Process</strong><br>Executes command line commands in sub-processes. Will be used to handle a lot of Drupal’s command line duties.<br><br></li></ul><ul><li dir="ltr"><strong>Serializer</strong><br>Turns objects into a specific format, and vice-versa. This will be used for all sorts of things, from configuration to preparing nodes &amp; entities for delivery by a REST endpoint.<br><br></li></ul><ul><li dir="ltr"><strong>Yaml</strong><br>The YAML component will serve as an integral part of <a href="http://groups.drupal.org/build-systems-change-management/cmi">Drupal’s Configuration Management Initiative (CMI)</a>, allowing modules to define default configuration settings and then letting site builders override them. <br>This is a big improvement over Drupal’s previous attempts at defining configuration, which at one point were mixed up in the database with all the site’s content. Initiatives such as the Features project were a good first step to try and move configuration to the file system, but Drupal 8’s YAML-powered CMI will be a huge leap forward from this point.</li></ul><h2 dir="ltr">Components that aren’t in Symfony (but work with it)</h2><p>As well as Symfony components, there are also a lot of other third party PHP components that are popping up in Drupal 8 for the very first time. These components aren't part of Symfony as such, but tend to use Symfony components as well. Here's a rundown of what we found in core:</p><ul><li dir="ltr"><strong><a href="http://getcomposer.org/">Composer</a></strong><br>This is a dependency manager for PHP that <a href="http://getcomposer.org/doc/00-intro.md">downloads dependencies for a particular project, on a local basis</a>. A close analogue might be the Bundler gem for Ruby.</li></ul><ul><li dir="ltr"><strong><a href="http://www.doctrine-project.org/">Doctrine</a></strong><br>Doctrine is a set of tools that works with data and databases. In particular, Drupal uses one significant part of Doctrine:<br><br><strong>Annotations</strong><br>This provides extra metadata to Drupal, telling it what various components are used for. This is a pretty tricky piece of functionality but it’s going to come in handy later, especially when developers need to define custom entity types.<br><br>Drupal 8 <a href="http://drupal.org/node/1817778" style="line-height: 1.538em;">won’t use Doctrine’s Object Relational Mapper or Database Abstraction Layer</a>, but it may use it in a later version.</li></ul><ul><li dir="ltr"><strong><a href="http://guzzlephp.org/">Guzzle</a></strong><br>This is a PHP HTTP client, enabling Drupal 8 to make web requests. This will become absolutely vital as Drupal sites will need to work with all kinds of web services.<br><br></li><li dir="ltr"><strong><a href="https://github.com/kriswallsmith/assetic">Assetic</a></strong><br>An asset management framework; will help Drupal prepare additional stuff for page downloads, whether it be CSS, JavaScript, images or whatever. This will effectively take on the duty of compressing CSS and JavaScript, managing image styles, and dealing with other media types in a consistent fashion.<br>There are still some issues with the integration, so we’re awaiting final confirmation about whether it will ship with Drupal 8.<br><br></li><li dir="ltr"><strong><a href="http://www.easyrdf.org/">EasyRDF</a></strong><br>This library makes it easy to consume and produce RDF, which allows Drupal 8 sites to produce metadata in the markup, preparing them to be first class citizens of the semantic web.<br><br></li><li dir="ltr"><strong><a href="https://github.com/sebastianbergmann/phpunit/">PHPUnit</a></strong><br>Industry standard unit testing, <a href="http://drupal.org/node/1901670">baked right into Drupal core</a>. Drupal uses it to make sure core works the right way all the time, helps module devs build their modules the right way, and therefore makes it easier for Drupal code to be used in the wider PHP ecosystem.<br><br></li><li dir="ltr"><strong><a href="http://drupal.org/node/1289536">PSR/Log</a></strong><br>This component provides a common logging interface throughout an entire PHP application, allowing Symfony components to log the same way as Drupal does. It is expected that watchdog will be augmented by Monolog, which makes the PSR/Log component vital in this effort.</li></ul><ul><li dir="ltr"><strong><a href="http://symfony.com/doc/master/cmf/components/routing.html">Symfony2 CMF’s Routing Component</a></strong><br>This is part of Symfony's spinoff Content Management Framework project, but can be used on a standalone basis. It extends Symfony's routing systems and provides a couple of extra classes which Drupal is going to require.</li></ul><p><br>Keep in mind that both of these lists are subject to change, so keep an eye on our blog for fresh updates as they come in.</p><h2 dir="ltr">Find out more</h2><p>If you'd like to learn more about how Symfony is used in Drupal 8, watch this blog. You can also catch us in DrupalCon Portland this May, where <a href="http://portland2013.drupal.org/node/3723" style="line-height: 1.538em;">we'll be giving a training session on Drupal 8 and Symfony</a>. Registration is now open; we have a special for the first few tickets, so get in quick!</p></div></div></div><div class="field field-name-field-blog-terms field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../../../tags/drupal-8.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal 8</a></div><div class="field-item odd"><a href="../../../tags/symfony.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Symfony</a></div><div class="field-item even"><a href="../../../tags/drupalcon-portland.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">DrupalCon Portland</a></div><div class="field-item odd"><a href="../../../tags/symfony-components.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Symfony Components</a></div><div class="field-item even"><a href="../../../tags/drupal-planet.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal Planet</a></div></div></div><div id="comments" class="comment-wrapper">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-751"></a>
+<div class="comment clearfix comment-published odd first author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-03-14T19:45:47+11:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Agnar Ødegård</span> on Thu, 2013-03-14 19:45</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/751">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/751#comment-751" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/751#comment-751" class="permalink" rel="bookmark">Thanks</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thanks for the write up. Looking forward to future blog posts. I'm looking forward to diving deep into the internals of D8.</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment --><a id="comment-753"></a>
+<div class="comment clearfix comment-published even author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-03-16T09:46:38+11:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Larry Garfield</span> on Sat, 2013-03-16 09:46</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/753">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/753#comment-753" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/753#comment-753" class="permalink" rel="bookmark">Some corrections</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>"If you already know about hooks in Drupal, you’re already aware of what Dependency Injection is."<br />
+ <br />
+Erm, no.  Hooks are more akin to events.  Drupal has no equivalent of the Dependency Injection Container in version 7 and earlier, and that's a problem. :-)  This is perhaps the largest technical shift in Drupal 8 so far, but one of the most important.  It's a different way of thinking about your code.<br />
+ <br />
+We're also not using the Process component at all.  I'm not sure why it's on the list.<br />
+ <br />
+Replacing watchdog with Monolog is not guaranteed. There's an open issue to leverage PSR-3, but as of yet Monolog is not decided.  (Additional input on that front would be welcome.)<br />
+ <br />
+The Symfony CMF Routing component also has considerable input from Drupal itself; the current code there is a collabration between Drupal and the Symfony CMF team, and it is more than just "a few classes we'll require".  It's actually the core of the new routing system. :-)</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment -->
+<div class="indented"><a id="comment-754"></a>
+<div class="comment clearfix comment-published odd registered-user author-">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-03-17T03:46:00+11:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/ryan" typeof="sioc:UserAccount" property="foaf:name" datatype="">Ryan</span> on Sun, 2013-03-17 03:46</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/754">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/754#comment-754" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/754#comment-754" class="permalink" rel="bookmark">Correct (of course)</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/753#comment-753" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Hi Larry, <br />
+Of course, Dependency Injection Containers are very different to the current hook system, but the idea of being able to extend a piece of code by injecting something into it as a concept we felt was very similar. With a few sentences for each of these components, its hard to capture all the specifics. <br />
+Regarding the process component, it is a dependency for Assetic - you can see it referenced at <a href="http://api.drupal.org/api/drupal/namespace/Symfony%21Component%21Process/8 ">http://api.drupal.org/api/drupal/namespace/Symfony%21Component%21Process...</a></p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment -->
+<div class="indented"><a id="comment-755"></a>
+<div class="comment clearfix comment-published even author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-03-17T05:59:54+11:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">katbailey</span> on Sun, 2013-03-17 05:59</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/755">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/755#comment-755" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/755#comment-755" class="permalink" rel="bookmark">Suggested synopsis of the DI Component</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/754#comment-754" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>How about:"Dependency Injection is a way of writing code that keeps classes decoupled from each other so that they are reusable and unit-testable. The DI Container provides the infrastructure that allows these decoupled classes to interact with each other."<br />
+It really has nothing to do with hooks :-/</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment -->
+<div class="indented"><a id="comment-756"></a>
+<div class="comment clearfix comment-published odd registered-user author-">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-03-18T12:46:00+11:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" about="/users/ryan" typeof="sioc:UserAccount" property="foaf:name" datatype="">Ryan</span> on Mon, 2013-03-18 12:46</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/756">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/756#comment-756" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/756#comment-756" class="permalink" rel="bookmark">Thanks</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><span rel="sioc:reply_of" resource="/comment/755#comment-755" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thanks, katbailey. I've updated the description with your suggestion.&nbsp;</p></div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment --></div></div></div><a id="comment-764"></a>
+<div class="comment clearfix comment-published even author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-04-11T19:10:00+10:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">saurabh_saxena</span> on Thu, 2013-04-11 19:10</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/764">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/764#comment-764" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/764#comment-764" class="permalink" rel="bookmark">Hi there, read the article.</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Hi there, read the article. One of the most notable changes that Drupal 8 is doing is by moving its core to Symfony 2 Framework. Symfony 2 is a high performance robust PHP framework, which utilizes the object-oriented architecture of PHP 5.3 for efficacy. Symfony 2 will help to achieve certain premeditated goals. One is that Drupal developers will have to be less anxious with writing the basic functionality, which will now be managed by Symfony.<br />
+Saurabh Saxena</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment --><a id="comment-765"></a>
+<div class="comment clearfix comment-published odd last author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-04-24T00:01:22+10:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">Mike</span> on Wed, 2013-04-24 00:01</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/111/765">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/765#comment-765" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/765#comment-765" class="permalink" rel="bookmark">Thank you for the clearly</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/mar/symfony-components-in-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Thank you for the clearly written article. </p>
+<p>If I interpret these numbers correct, and the tests are valid, then these performance figures for Symfony2 look bad compared to other frameworks?<br /><a href="http://www.techempower.com/benchmarks/#section=data-r3">http://www.techempower.com/benchmarks/#section=data-r3</a></p>
+<p>If so, how will this affect Drupal 8 performance?</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment -->
+      <h2 class="title comment-form">Add new comment</h2>
+    <form class="comment-form clearfix" action="http://crossfunctional.net/comment/reply/111" method="post" id="comment-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Your name </label>
+ <input type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text" />
+</div>
+<div class="form-item form-type-textfield form-item-subject">
+  <label for="edit-subject">Subject </label>
+ <input type="text" id="edit-subject" name="subject" value="" size="60" maxlength="64" class="form-text" />
+</div>
+<div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body"><div id="comment-body-add-more-wrapper"><div class="text-format-wrapper"><div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+  <label for="edit-comment-body-und-0-value">Comment <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper"><textarea class="text-full form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea></div>
+</div>
+<fieldset class="filter-wrapper form-wrapper" id="edit-comment-body-und-0-format"><div class="fieldset-wrapper"><div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help"><p><a href="../../../filter/tips.html" target="_blank">More information about text formats</a></p></div><div class="form-item form-type-select form-item-comment-body-und-0-format">
+  <label for="edit-comment-body-und-0-format--2">Text format </label>
+ <select class="filter-list wysiwyg form-select" id="edit-comment-body-und-0-format--2" name="comment_body[und][0][format]"><option value="filtered_html" selected="selected">Filtered HTML</option><option value="plain_text">Plain text</option></select>
+</div>
+<div class="filter-guidelines form-wrapper" id="edit-comment-body-und-0-format-guidelines"><div class="filter-guidelines-item filter-guidelines-filtered_html"><h3>Filtered HTML</h3><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;blockquote&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Lines and paragraphs break automatically.</li></ul></div><div class="filter-guidelines-item filter-guidelines-plain_text"><h3>Plain text</h3><ul class="tips"><li>No HTML tags allowed.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Lines and paragraphs break automatically.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><input type="hidden" name="form_build_id" value="form-u-DMSV5bWoJgBeweQFUnaZ4_KmtVu0Kuh9Qevo9vFIc" />
+<input type="hidden" name="form_id" value="comment_node_blog_form" />
+<div class="form-actions form-wrapper" id="edit-actions"><div class="wrapsubmit-left"><div class="wrapsubmit-right"><input type="submit" id="edit-submit" name="op" value="Save" class="form-submit" /></div></div><div class="wrapsubmit-left"><div class="wrapsubmit-right"><input type="submit" id="edit-preview" name="op" value="Preview" class="form-submit" /></div></div></div></div><div class="cornerstone form-cs1"></div><div class="cornerstone form-cs2"></div><div class="cornerstone form-cs3"></div><div class="cornerstone form-cs4"></div></form>  </div>
+</div>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+
+        
+        
+    </div></div><!-- end .inner --><!-- end #content -->
+
+        <div class="sidebar side-second"><div class="inner sidebar-inner">
+      <div class="region region-sidebar-second">
+    <div id="block-fb-likebox-0" class="block block-fb-likebox block-fb_likebox region-odd even region-count-1 count-2 first last"><div class="block-inner">
+
+
+  <div class="content">
+    
+<iframe
+src="http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/crossfunctional&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=false&amp;header=true&amp;height=210&amp;show_border=true&amp;force_wall=false"
+scrolling="no"
+frameborder="0"
+style="border: none; overflow: hidden; width: 292px; height: 210px;"
+allowTransparency="true">
+</iframe>
+  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+<div id="block-views-blog-archive-block" class="block block-views block-views region-even odd region-count-2 count-3  "><div class="block-inner">
+
+  <h2 class="title blocktitle">Monthly archive</h2>
+
+  <div class="content">
+    <div class="view view-blog-archive view-id-blog_archive view-display-id-block view-dom-id-8b75a8ef3102e45f61f96371bc7f8374">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+  <ul class="views-summary">
+      <li><a href="../../../archive/201305.html">May 2013</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201303.html">March 2013</a>
+              (3)
+          </li>
+      <li><a href="../../../archive/201302.html">February 2013</a>
+              (6)
+          </li>
+      <li><a href="../../../archive/201301.html">January 2013</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201212.html">December 2012</a>
+              (2)
+          </li>
+      <li><a href="../../../archive/201210.html">October 2012</a>
+              (2)
+          </li>
+      <li><a href="../../../archive/201209.html">September 2012</a>
+              (2)
+          </li>
+      <li><a href="../../../archive/201208.html">August 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201207.html">July 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201206.html">June 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201205.html">May 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201204.html">April 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201203.html">March 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201202.html">February 2012</a>
+              (1)
+          </li>
+      <li><a href="../../../archive/201201.html">January 2012</a>
+              (2)
+          </li>
+      <li><a href="../../../archive/201112.html">December 2011</a>
+              (3)
+          </li>
+    </ul>
+</div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+    </div></div><!-- end .inner --><!-- end sidebar right -->
+        </div><!-- end .wrapcolumns -->
+    </div><!-- end #main-inner -->
+  </div><!-- end #main -->
+
+  
+    <div class="sooperblocks sooper-full clearfix postblockscolor">
+    <div class="inner sooper-mast clearfix postblockscolor-inner">
+    <div class="sooper-buffer">
+      <div class="region region-postblockscolor">
+    <div id="block-block-6" class="block block-block block-block region-odd even region-count-1 count-4 first last"><div class="block-inner">
+
+
+  <div class="content">
+    <p style="text-align: center;"><img src="../../../sites/crossfunctional.net/files/styles/thumb_height/public/DA-organisation-120.png" class="footer-logo" /><img src="../../../sites/crossfunctional.net/files/styles/thumb_height/public/WebsiteSpark-2_bL-fix.png" class="footer-logo" /><img src="../../../sites/crossfunctional.net/files/styles/thumb_height/public/badge_partner_small.png" alt="Aquia Partner" class="footer-logo" /><a href="http://training.acquia.com/"><img src="../../../sites/crossfunctional.net/files/styles/thumb_height/public/badge_training_partner_small.png" alt="Aquia Training Partner" target="_blank" class="footer-logo" /></a><img src="../../../sites/crossfunctional.net/files/styles/thumb_height/public/wsg-logo300px.png" class="footer-logo" alt="WSG logo" /></p>
+  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+    </div><!-- end .sooper-buffer -->
+    </div><!-- end .postblockscolor-inner -->
+  </div><!-- end .postblockscolor -->
+  
+  <div id="footer" class="clearfix sooper-full">
+    <div class="inner sooper-mast clearfix footer-inner">
+            <div class="region region-footer">
+    <div id="block-block-3" class="block block-block block-block region-odd odd region-count-1 count-5 first "><div class="block-inner">
+
+
+  <div class="content">
+    <p style="text-align: center;">© 2013 CrossFunctional | PH: +61 (02) 800 800 99 | ABN: 971 5541 8125</p>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+<div id="block-social-media-links-social-media-links" class="block block-social-media-links block-social_media_links region-even even region-count-2 count-6  last"><div class="block-inner">
+
+
+  <div class="content">
+    <ul class="links social-media-links inline horizontal"><li class="facebook first"><a href="http://www.facebook.com/crossfunctional" title="Facebook"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/facebook.png" alt="" /></a></li>
+<li class="twitter"><a href="http://www.twitter.com/crossfunctional/" title="Twitter"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/twitter.png" alt="" /></a></li>
+<li class="linkedin last"><a href="http://www.linkedin.com/company/crossfunctional" title="LinkedIn"><img typeof="foaf:Image" src="../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/linkedin.png" alt="" /></a></li>
+</ul>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+        </div><!-- end .footer-inner -->
+  </div><!-- end #footer -->
+
+
+
+</body>
+</html>
+  <div class="close"> glqxz9283 sfy39587p10 mnesdcuix7</div>
+  <script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+<script type="text/javascript" src="../../../sites/crossfunctional.net/files/js/js_loJJMZ-yLpCFnc5Htc8xgIMfdfNbw5E30CdocHWSiaM.js"></script>
+</body>
+</html>

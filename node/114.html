@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta about="/blog/2013/may/indefinitive-guide-composer-drupal-8" property="sioc:num_replies" content="2" datatype="xsd:integer" />
+<link rel="shortcut icon" href="../sites/crossfunctional.net/files/cf-favicon.png" type="image/png" />
+<meta content="An indefinitive guide to Composer in Drupal 8" about="/blog/2013/may/indefinitive-guide-composer-drupal-8" property="dc:title" />
+<link rel="shortlink" href="114.html" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="../blog/2013/may/indefinitive-guide-composer-drupal-8.html" />
+  <title>An indefinitive guide to Composer in Drupal 8 | CrossFunctional</title>
+  <link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css_GqCqCmGspWzZsDVTgkFoFb2eEt4xaByq4GFNcVi8QG4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css_K8fRaarJVpmwdJlS1tED2qb8vJSkBNe9xzCiZodamcg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css_PFzde6NqIgdmVfjBADu8ttXrb61q-mxDmige1zGFhzg.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie8fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie7fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie6fix.css?p90jql" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css_f_MG6Jv9JWcnBcICon4IsTrpeAm2jl0X-ecD7717aVo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/crossfunctional.net/files/css/css__BWCVzNEsJkW32fVyWsmX2bSyLsv8277P9OZnzVyNas.css" media="all" />
+  <script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_e2H87kgc6USbQwOBkQOCVF_Cr8KkwLd5XZ1OCW7BZb4.js"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_hDg2cAn4kQEMa_Y6cxLCtK3XsiwPV2KxtUxDJKNJ-kc.js"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_nkHDa6nOs0QuSV6WHpN1pLgWfLDXbkfXkxXdNqcMrCs.js"></script>
+<script type="text/javascript" src="../sites/all/modules/contrib/lightbox2/js/lightbox.js%3F1526796698"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_99Q09AjZ54KjEwsoZ2dR5zp5ECOzAMSU-ByeB6CWyAU.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-20691791-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_oBVHm9wQoh1hrl17v_Jw8IZ0qqRkjoFZK5GJ3mFjPvg.js"></script>
+<script type="text/javascript" src="../sites/all/libraries/tinymce/jscripts/tiny_mce/tiny_mce.js%3Fp90jql"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_JG5XjY4W6CKNZKiY9Ai4pSvcle4BNrGzCLHATtgRnxw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\u002F", "pathPrefix":"", "current_theme":"sooper_synopsis", "theme_path":"\u002Fsites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002F", "fontKit":{"invoke":"h1, h2, h3, h4, h5, h6, .cufon .content, p.mission, p.slogan, .views-field-title, legend:not(.collapse-processed)"}, "sooperfish":{"invoke":"#header \u003E div.inner \u003E ul.menu", "delay":"500", "dualColumn":"5", "tripleColumn":"12", "sooperfishWidth":"200", "speedShow":"500", "easingShow":"swing", "speedHide":"500", "easingHide":"swing"}, "slideshowKit":{"invoke":"div.slideshow div\u003Eul", "fx":"scrollHorz", "timeout":"8000", "continuous":"0", "speed":"500", "pagerEvent":"mouseover", "easing":"linear", "random":"0", "pause":"0", "pauseOnPagerHover":"1", "delay":"0"}, "ajaxPageState":{"theme":"sooper_synopsis", "theme_token":"0hREFNUDV9GRr_-uoaEEbFgIpj6yeaReNk9I-YuvnW8", "js":{"sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter\u002Fsyntaxhighlighter.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Fwysiwyg.js":1, "misc\u002Fjquery.js":1, "misc\u002Fjquery.once.js":1, "misc\u002Fdrupal.js":1, "misc\u002Fui\u002Fjquery.ui.core.min.js":1, "misc\u002Fui\u002Fjquery.ui.widget.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert.utils.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert.js":1, "misc\u002Fui\u002Fjquery.ui.button.min.js":1, "misc\u002Fui\u002Fjquery.ui.mouse.min.js":1, "misc\u002Fui\u002Fjquery.ui.draggable.min.js":1, "misc\u002Fui\u002Fjquery.ui.position.min.js":1, "misc\u002Fui\u002Fjquery.ui.resizable.min.js":1, "misc\u002Fui\u002Fjquery.ui.dialog.min.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews\u002Fjs\u002Fjquery.ui.dialog.patch.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Fwysiwyg.init.js":1, "misc\u002Fform.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshCore.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshBrushPhp.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fjquery.easing-sooper.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Finvoke-twitter-cycle.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.equalHeights.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Fcufon-yui.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Ffonts\u002FSapir.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Finvoke-cufon.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Fjquery.sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Finvoke-sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Fjquery.cycle.all.min.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Finvoke-SlideshowKit.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fslidedown-behaviour.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.bgFade.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Fauto_image_handling.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Flightbox.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews_slideshow\u002Fjs\u002Fviews_slideshow.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fgoogle_analytics\u002Fgoogleanalytics.js":1, "0":1, "misc\u002Ftextarea.js":1, "http:\u002F\u002Fcrossfunctional.net\u002Fsites\u002Fcrossfunctional.net\u002Ffiles\u002Fjs\u002Fwysiwyg\u002Fwysiwyg_tinymce_FigIcIPs-hrlOsg5rRlHP_-i34bvHf3mmjhG6W2cuW0.js":1, "sites\u002Fall\u002Flibraries\u002Ftinymce\u002Fjscripts\u002Ftiny_mce\u002Ftiny_mce.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fjs\u002Ftinymce-3.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fjs\u002Fnone.js":1, "modules\u002Ffilter\u002Ffilter.js":1}, "css":{"modules\u002Fsystem\u002Fsystem.base.css":1, "modules\u002Fsystem\u002Fsystem.menus.css":1, "modules\u002Fsystem\u002Fsystem.messages.css":1, "modules\u002Fsystem\u002Fsystem.theme.css":1, "misc\u002Fui\u002Fjquery.ui.core.css":1, "misc\u002Fui\u002Fjquery.ui.theme.css":1, "misc\u002Fui\u002Fjquery.ui.button.css":1, "misc\u002Fui\u002Fjquery.ui.resizable.css":1, "misc\u002Fui\u002Fjquery.ui.dialog.css":1, "modules\u002Faggregator\u002Faggregator.css":1, "modules\u002Fcomment\u002Fcomment.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fdate\u002Fdate_api\u002Fdate.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fdate\u002Fdate_popup\u002Fthemes\u002Fdatepicker.1.7.css":1, "modules\u002Ffield\u002Ftheme\u002Ffield.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fmollom\u002Fmollom.css":1, "modules\u002Fnode\u002Fnode.css":1, "modules\u002Fsearch\u002Fsearch.css":1, "modules\u002Fuser\u002Fuser.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews\u002Fcss\u002Fviews.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fctools\u002Fcss\u002Fctools.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fcss\u002Flightbox.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsocial_media_links\u002Fsocial_media_links.css":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fstyles\u002FshCore.css":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fstyles\u002FshThemeDefault.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews_slideshow\u002Fviews_slideshow.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fsyntaxhighlighter_insert\u002Fsyntaxhighlighter_insert_wysiwyg\u002Fsyntaxhighlighter_insert_wysiwyg.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fprint\u002Fcss\u002Fprintlinks.css":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fwysiwyg\u002Feditors\u002Fcss\u002Ftinymce-3.css":1, "modules\u002Ffilter\u002Ffilter.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie8fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie7fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fie6fix.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Freset-preset.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fstyle.css":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fcss\u002Fcustom.css":1, "sites\u002Fcrossfunctional.net\u002Ffiles\u002Fcto-sooper_synopsis.css":1}}, "lightbox2":{"rtl":0, "file_path":"\u002F(\u005Cw\u005Cw\u002F)public:\u002F", "default_image":"\u002Fsites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fimages\u002Fbrokenimage.jpg", "border_size":10, "font_color":"000", "box_color":"fff", "top_position":"", "overlay_opacity":"0.8", "overlay_color":"000", "disable_close_click":1, "resize_sequence":0, "resize_speed":400, "fade_in_speed":400, "slide_down_speed":600, "use_alt_layout":0, "disable_resize":1, "disable_zoom":0, "force_show_nav":0, "show_caption":1, "loop_items":0, "node_link_text":"View Image Details", "node_link_target":0, "image_count":"Image !current of !total", "video_count":"Video !current of !total", "page_count":"Page !current of !total", "lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\u002Fkbd\u003E\u003C\u002Fa\u003E to close", "download_link_text":"", "enable_login":false, "enable_contact":false, "keys_close":"c x 27", "keys_previous":"p 37", "keys_next":"n 39", "keys_zoom":"z", "keys_play_pause":"32", "display_image_size":"original", "image_node_sizes":"(\u005C.thumbnail)", "trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail", "trigger_lightbox_group_classes":"", "trigger_slideshow_classes":"", "trigger_lightframe_classes":"", "trigger_lightframe_group_classes":"", "custom_class_handler":0, "custom_trigger_classes":"", "disable_for_gallery_lists":1, "disable_for_acidfree_gallery_lists":true, "enable_acidfree_videos":true, "slideshow_interval":5000, "slideshow_automatic_start":0, "slideshow_automatic_exit":0, "show_play_pause":1, "pause_on_next_click":0, "pause_on_previous_click":1, "loop_slides":0, "iframe_width":600, "iframe_height":400, "iframe_border":1, "enable_video":0}, "syntaxhighlighter_insert_wysiwyg":{"current_form":"form-8bAomBjz9lwv7sPCNQUFzS8V433MEn9ckQkYuRRqHCw"}, "googleanalytics":{"trackOutbound":1, "trackMailto":1, "trackDownload":1, "trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}, "wysiwyg":{"configs":{"tinymce":{"formatfiltered_html":{"button_tile_map":true, "document_base_url":"\u002F", "mode":"none", "plugins":"", "theme":"advanced", "width":"100%", "strict_loading_mode":true, "convert_urls":false, "entities":"160,nbsp,173,shy,8194,ensp,8195,emsp,8201,thinsp,8204,zwnj,8205,zwj,8206,lrm,8207,rlm", "theme_advanced_resize_horizontal":false, "theme_advanced_resizing_use_cookie":false, "theme_advanced_statusbar_location":"bottom", "theme_advanced_resizing":1, "theme_advanced_toolbar_location":"top", "theme_advanced_toolbar_align":"left", "theme_advanced_buttons1":"", "theme_advanced_buttons2":"", "theme_advanced_buttons3":""}}}, "plugins":[  ], "disable":"Disable rich-text", "enable":"Enable rich-text", "triggers":{"edit-comment-body-und-0-format--2":{"field":"edit-comment-body-und-0-value", "formatfiltered_html":{"editor":"tinymce", "status":1, "toggle":1, "resizable":1}, "formatplain_text":{"editor":"none", "status":1, "toggle":1, "resizable":1}}}}});
+//--><!]]>
+</script>
+  <style type="text/css">
+  .postblockscolor .block {
+width:100%;
+}.sidebar {width: 31.999%;}
+#main .main-inner .sooper-mast { background-position: 31.999% 0; }
+#main .main-inner .wrapcolumns { background-position: 68.101% 0; }
+#content {width: 68%;}  </style>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-114 node-type-blog" >
+  <div id="skip-link" class="element-invisible">
+    <a href="114.html#main-content">Skip to main content</a>
+  </div>
+      
+  <div id="header" class="sooper-full">
+    <div class="inner sooper-mast clearfix header-inner">
+          <a href="../index.html" title=""><img src="../sites/crossfunctional.net/files/cf-logo-transparent_1.png" alt="Logo" class="logo"/></a>
+    
+    
+    
+          <ul class="menu"><li class="first leaf"><a href="../index.html"><span class="tab">Home</span></a></li>
+<li class="leaf"><a href="../page/about-us.html"><span class="tab">About Us</span></a></li>
+<li class="leaf"><a href="../portfolio.html" title=""><span class="tab">Portfolio</span></a></li>
+<li class="last leaf"><a href="../blog.html" title=""><span class="tab">Blog</span></a></li>
+</ul>        </div><!-- end #header-inner -->
+  </div><!-- end #header -->
+
+  
+  
+  
+  <div id="main" class="sooper-full">
+    <div class="main-inner sooper-mast clearfix inner">
+
+    <div class="wrapcolumns">
+    
+    <div id="content"><div class="inner content-inner">
+      
+      
+        <a name="content"></a>
+                  <h1 class="content title" id="content-title">An indefinitive guide to Composer in Drupal 8</h1>
+        
+        
+        
+        
+          <div class="region region-content">
+    <div id="block-system-main" class="block block-system block-system region-odd odd region-count-1 count-1 first last"><div class="block-inner">
+
+
+  <div class="content">
+    <div class="ds-1col node node-blog view-mode-full clearfix ">
+
+  
+  <span class="author">Geoffrey</span><span class="post-date">1 May 2013</span><div class="service-links"><a href="http://twitter.com/share?url=http%3A//crossfunctional.net/blog/2013/may/indefinitive-guide-composer-drupal-8&amp;text=An%20indefinitive%20guide%20to%20Composer%20in%20Drupal%208" title="Share this on Twitter" class="service-links-twitter" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/twitter.png" alt="Twitter logo" /></a> <a href="http://www.facebook.com/sharer.php?u=http%3A//crossfunctional.net/blog/2013/may/indefinitive-guide-composer-drupal-8&amp;t=An%20indefinitive%20guide%20to%20Composer%20in%20Drupal%208" title="Share on Facebook" class="service-links-facebook" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/facebook.png" alt="Facebook logo" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A//crossfunctional.net/blog/2013/may/indefinitive-guide-composer-drupal-8&amp;title=An%20indefinitive%20guide%20to%20Composer%20in%20Drupal%208&amp;summary=In%20the%20past%20couple%20of%20posts%2C%20we%E2%80%99ve%20put%20several%20different%20facets%20of%20Drupal%208%20under%20the%20microscope%20and%20discussed%20how%20each%20one%20is%20going%20to%20change%20the%20way%20you%20develop%20for%20Drupal%20in%20the%20very%20near%20future.%20Now%2C%20we%E2%80%99d%20like%20to%20ask%20a%20question%20about%20Drupal%208%20development%2C%20one%20that%20we%20believe%20is%20going%20to%20be%20quite%20important%20in%20particular%20for%20developers%20who%E2%80%99ve%20worked%20within%20the%20wider%20PHP%20ecosystem.&amp;source=CrossFunctional" title="Publish this post to LinkedIn" class="service-links-linkedin" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/linkedin.png" alt="LinkedIn logo" /></a> <a href="https://plus.google.com/share?url=http%3A//crossfunctional.net/blog/2013/may/indefinitive-guide-composer-drupal-8" title="Share this on Google+" class="service-links-google-plus" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/google_plus.png" alt="Google+ logo" /></a> <a href="http://bookmarks.yahoo.com/myresults/bookmarklet?u=http%3A//crossfunctional.net/blog/2013/may/indefinitive-guide-composer-drupal-8&amp;t=An%20indefinitive%20guide%20to%20Composer%20in%20Drupal%208" title="Bookmark this post on Yahoo" class="service-links-yahoo" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/yahoo.png" alt="Yahoo logo" /></a> <a href="../print/blog/2013/may/indefinitive-guide-composer-drupal-8.html" title="Printable version" class="service-links-print" rel="nofollow" target="_blank"><img typeof="foaf:Image" src="../sites/all/modules/contrib/service_links/images/print.png" alt="Print HTML logo" /></a></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>In the past couple of posts, we’ve put several different facets of Drupal 8 under the microscope and discussed how each one is going to change the way you develop for Drupal in the very near future. Now, we’d like to ask a question about Drupal 8 development, one that we believe is going to be quite important in particular for developers who’ve worked within the wider PHP ecosystem.</p><p dir="ltr">As we already know, <a href="http://drupal.org/node/1764330">Drupal 8 contains Composer as part of its main distribution</a>. One of the main components of Composer’s workflow is that it processes a central composer.json file to obtain and download a list of dependencies, that are in turn stored in a central vendor directory, and that are in turn loaded via a central ClassLoader object.</p><p dir="ltr">This method <a href="http://munich2012.drupal.org/content/drupal-has-dependencies-lets-manage-them">works fine for Drupal core</a>, as we know what dependencies it’s going to require and it installs everything in a consistent fashion that anything else within Drupal can get hold of.</p><p dir="ltr">What we’d like to know is <a href="http://drupal.org/node/1805316#comment-7192352">how modules can add their own composer dependencies</a> without getting in the way of Drupal’s dependencies. Could this be done with a custom composer.json file for each module?</p><h2 dir="ltr">To recap: What is Composer?</h2><p dir="ltr"><a href="http://getcomposer.org/doc/00-intro.md#dependency-management">Composer is a dependency manager</a>. It’s not like a package manager, which downloads a specific version of a specific package and applies it throughout the system. It handles packages on a local basis, different for each individual project it works with.</p><p dir="ltr">In this sense, it resembles Ruby’s <a href="http://gembundler.com">Bundler gem</a> much more closely than it resembles traditional package managers like apt, yum, MacPorts, Homebrew, or PEAR.</p><h2 dir="ltr">Why is Composer in Drupal 8?</h2><p dir="ltr">As part of Drupal 8’s effort to embrace contributions from the wider PHP community, it needs a stable way of working with outside libraries in a fashion that doesn’t interfere with that of other systems. Given the way that Composer works on a strictly local basis, <a href="http://drupal.org/node/1475510">it fits Drupal 8’s need well</a>.</p><p dir="ltr">However, contributed modules might in turn have their own dependencies that aren’t covered by Drupal 8’s default dependencies, and there doesn’t seem to be a canonical way to set dependencies for individual modules. This is further confused by the fact that Drupal has already had a way of resolving dependencies between modules themselves for some time, but these library dependencies cannot be resolved by Drupal or Composer on their own.</p><p dir="ltr">This is the situation we’re currently puzzling over, and this is going to become an increasingly big deal as Drupal 8 gets closer to completion, and module developers start needing to port modules to Drupal 8, or build completely new ones. We're not the only ones trying to work this problem out, as you can see in this list of Drupal core issues:</p><ul><li><a href="http://drupal.org/node/1859564">Multiple ComposerClassLoaders</a></li><li><a href="http://drupal.org/node/1920666">Allow additional external libraries with composer</a></li><li><a href="http://drupal.org/node/1475510">Remove symfony components from the core repo and let Composer manage the dependencies instead</a></li><li><a href="http://drupal.org/node/1723674">Support composer autoload</a></li></ul><h2 dir="ltr">Method 1: Separate composer.json file per module</h2><p dir="ltr">One possible solution would be to have each module contain their own composer.json file, specifying their own dependencies independently. You could then install the dependencies when the module is enabled for the first time, like so:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">use Symfony\Component\Process\Process;
+function mymodule_install() {
+  $cmd = 'cd ' . __DIR__ . ' &amp;&amp; composer install';
+  $process = new Process($cmd);
+  $process-&gt;setTimeout(3600);
+  $process-&gt;run();
+}</pre><p>As you can see, we’re using <a href="http://symfony.com/doc/master/components/process.html">Symfony’s Process component</a> to run Composer from the command line at install time. This particular example depends on a global install of Composer, so you may need to modify it to use a downloaded instance of composer.phar in order to account for all possible cases.</p><p dir="ltr">The problem with this approach is that Composer is not built to work the way we’re discussing here. <a href="http://stackoverflow.com/questions/11925946/how-to-get-multiple-vendor-directories-with-composer">Composer requires a single, unified vendor directory</a> which all dependencies get dumped into, and doesn’t cope very well with having a big global project that uses Composer, which also contains a lot of independently contributed modules that also use Composer. If a Drupal project did use a set of modules that also used Composer, it won’t build it to wrap all those dependencies up in the one vendor directory, and won’t be able to load the class files from the same place.</p><p dir="ltr">As a result of this, since Drupal 8 uses the ClassLoader object that gets generated by Composer to load Drupal’s default dependencies, the global ClassLoader won’t contain the class paths that are relevant to your module. You can decide to use two ClassLoader objects, one global, one for your module, but if you decide to try and use both ClassLoader objects at the same time, you’re likely to get some nasty namespace clashes between both objects. Also, if you decide to use several modules that all use Composer in this fashion, you’re likely to have major problems managing all the different ClassLoader objects.</p><p dir="ltr">One possible way around this would be to define your own object that sets up the paths required for autoloading, but then the benefits of using ClassLoader objects is made redundant, and in a particularly pointless fashion at that. Alternatively, you could just hardcode the paths to your module’s vendor directory into your module, but that also misses the point of having autoloading functionality.</p><h2 dir="ltr">Method 2: Update root composer.json</h2><p dir="ltr">Another possible solution would be to update the root composer.json file with your own dependencies. While it makes sense to take due care and update it yourself, it might be more user-friendly to have your contributed module update the root composer.json file and re-run Composer to import any dependencies. This solves the problems from Method 1, and neatly makes your module’s dependencies available throughout your Drupal instance.</p><p dir="ltr">This could be done in Drupal 8 using a method like this:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag"> use Symfony\Component\Process\Process;
+ function mymodule_install() {
+   $composer_loc = DRUPAL_ROOT . '/composer.json';
+   $composer_data = json_decode(file_get_contents($composer_loc));
+
+   // Adding dependencies and rewriting composer json
+   $composer_data['require']['foo/bar'] = "1.0.0";
+   file_put_contents($composer_loc, json_encode($composer_data));
+
+   $cmd = 'cd ' . DRUPAL_ROOT . ' &amp;&amp; composer install';
+   $process = new Process($cmd);
+   $process-&gt;setTimeout(3600);
+   $process-&gt;run();
+ }</pre><p>(Note that this method depends on DRUPAL_ROOT, the behaviour of which may end up changing in Drupal 8. Always <a href="http://api.drupal.org/api/drupal/core%21includes%21bootstrap.inc/constant/DRUPAL_ROOT/8">follow the API documentation</a> when trying to confirm these things.)</p><p dir="ltr">However, there are also problems with this method.</p><p dir="ltr">Let’s propose a hypothetical situation in which we have two contributed modules on hand, and we need to use them both. Both rely on an external dependency... in this case, let’s say it’s <a href="https://packagist.org/packages/symfony/dom-crawler">Symfony’s DOM Crawler</a>. Module A is in active development and has been updated recently, and relies on symfony/dom-crawler version 2.3.x-dev at time of writing. Module B, on the other hand, is pretty stable and hasn’t required a major update in some time, but requires v2.2.1 due to some particular feature of that version that doesn’t yet have an equivalent in v2.3.</p><p dir="ltr">What happens when you install them both? It’s likely that somewhere along the path, there’ll be a major namespace clash and one of the modules will end up using a dependency that is completely incorrect for it. As you can see, this is a major problem with this approach; this is the sort of issue developers and site builders would need to resolve manually, even to the point of consultation with the developers of the libraries and modules involved.</p><p dir="ltr">Furthermore, there’s a problem that might cause difficulties once Drupal 8 has a stable release and is used by the general public. If subsequent versions of core update its dependencies, site developers will have to manually update the composer.json file. They’ll have to do this either by patching in core’s changes, or overwriting it and bringing in each contributed module’s dependencies. This leaves the risk that a dependency will be missed.</p><p dir="ltr">More severely, this raises the issue of <a href="http://drupal.stackexchange.com/questions/70457/is-it-acceptable-to-modify-drupals-composer-json-file">whether or not editing composer.json in any way counts as hacking core</a>. As has been drilled into our heads over and over, hacking core <a href="http://363582.spreadshirt.com/don-t-hack-core-A8089917">harms wildlife</a> and <a href="http://drupal.org/best-practices/do-not-hack-core">wrecks the developer experience</a> for yourself and others.</p><p dir="ltr">Some developers have proposed that <a href="http://drupal.org/node/1975220">Drupal core should become a dependency of Drupal</a>, and <a href="http://drupal.org/node/1920666">let Composer handle all dependency loading when Drupal is installed</a>.&nbsp;This would allow Drupal to ship with a global composer.json file that encompasses the entire project, distinct from Drupal core’s dependencies. This sounds like a pretty good idea, but in the weird event that a module requires a version of a particular library that clashes with one that Drupal core is using, this may cause problems.</p><p dir="ltr">Finally, handling dependencies on your own as part of a module’s install procedure is not very maintainable, and is kind of hacky to be honest. It’d be a much better idea to contribute back to the discussion surrounding Drupal core, to try and find a solution to this problem. Perhaps there’s a way to integrate this into core in a fashion that everyone can make use of.</p><h2 dir="ltr">Method 3: Stop worrying and love Symfony</h2><p dir="ltr">There is one more, particularly radical method that might help resolve some of these issues, and it follows on from the previous one.</p><p dir="ltr">There’s already been <a href="http://drupal.org/node/1398772">some discussion about using composer.json as the replacement for .info files</a> in future versions of Drupal, so this might be one place to start. Since Drupal 8’s developers have <a href="http://www.garfieldtech.com/blog/off-the-island-2013">gone to great lengths</a> to shed the antiquated NIH (Not Invented Here) mentality in favour of PIE (Proudly Invented Elsewhere), it might make sense down the line to start postulating the idea of Drupal modules effectively being standalone Symfony-compatible components that have Drupal as a dependency in turn. This would mean that they would be <a href="http://drupal.org/node/1886820">listed on a service like Packagist</a>, and integrated into a given project using Composer.</p><p dir="ltr">The biggest benefit of this method is that the issues we mentioned above, such as version clashes, difficulty of managing multiple vendor directories and ClassLoaders, diminish in importance or vanish completely. However this wouldn’t solve every problem with dependencies – as long as there are different components of any project that need to work together, there will almost always be collissions and arguments. In terms of admin experience, it would be interesting to see how this would work for ordinary site builders.</p><p dir="ltr">Also, any move like this is not likely to take place any time soon. Drupal 8 has undergone feature freeze already, and while there has already been some preliminary planning for Drupal 9, it’s unclear that a move to a more Symfony-esque style of module packaging is set to take place.</p><p dir="ltr">However, this opens up new possibilities for Drupal modules that may extend beyond Drupal itself. There are already packages out there like Bootstrap that don't necessarily need Symfony, but which do ship with composer.json files. It could even be possible for Drupal modules to be written such that their classes could be used without running in Drupal core... However, it's probably way too early to start thinking about this.</p><h2 dir="ltr">The development/administration experience</h2><p dir="ltr">It could be that we could use community contributions to improve the way that module dependencies are handled. The <a href="http://drupal.org/project/composer">Composer module</a> is a good example of one possible approach, which allows site builders to download and install dependencies from the command line.</p><p dir="ltr">However, the Composer module depends heavily on prior knowledge of <a href="http://drupal.org/project/drush">Drush</a> and the command line, which isn’t very friendly from the standpoint of a site builder, webmaster or end user. Also, using a contributed module to handle functionality that really should be in core isn’t a very good situation, as we’ve already experienced with modules such as CCK, Views and so on.</p><h2 dir="ltr">Awaiting resolution</h2><p dir="ltr">We’re aware that this is a topic of ongoing discussion, but we don’t yet know if there has been any consensus reached or any concerted push behind researching a solution. We’d be most interested in seeing something like Method 2 worked into core, so that all module developers can make use of it, but the idea of using a command line component for core functionality has some developers concerned.</p><p dir="ltr">If anyone knows how to do it, or can think of a better way to do it than what we’ve discussed here, <a href="https://twitter.com/crossfunctional">we are listening and would love to hear from you</a>. If there is anything we could possibly do to help find a solution to this issue, we'd be most interested in lending a hand.</p><h2 dir="ltr">Here’s what we do know</h2><p>If you'd like to learn more about Drupal 8 and how it works with Symfony, you can find us in DrupalCon Portland this May, where we'll be <a href="http://portland2013.drupal.org/node/3723">giving a training session on Drupal 8 and Symfony</a>. Registration is open, and tickets are going fast, so get in quick!</p></div></div></div><div class="field field-name-field-blog-terms field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../tags/drupal-8.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal 8</a></div><div class="field-item odd"><a href="../tags/symfony.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Symfony</a></div><div class="field-item even"><a href="../tags/composer.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Composer</a></div><div class="field-item odd"><a href="../tags/php.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">PHP</a></div><div class="field-item even"><a href="../tags/drupal-planet.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal Planet</a></div></div></div><div id="comments" class="comment-wrapper">
+          <h2 class="title">Comments</h2>
+      
+  <a id="comment-769"></a>
+<div class="comment clearfix comment-published odd first author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-05-02T00:43:27+10:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">rszrama</span> on Thu, 2013-05-02 00:43</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/114/769">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/769#comment-769" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/769#comment-769" class="permalink" rel="bookmark">Man, I kinda wish I wasn&#039;t</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/may/indefinitive-guide-composer-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Man, I kinda wish I wasn't doing training so I could come sit in yours. I might have to find me a sub. ; )</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment --><a id="comment-770"></a>
+<div class="comment clearfix comment-published even last author-anonymous">
+  <div class="meta">
+
+    
+    
+    <p class="submitted">
+      <span property="dc:date dc:created" content="2013-05-02T01:49:26+10:00" datatype="xsd:dateTime" rel="sioc:has_creator">Submitted by <span class="username" xml:lang="" typeof="sioc:UserAccount" property="foaf:name" datatype="">tenken</span> on Thu, 2013-05-02 01:49</span>    </p>
+
+          <div class="links">
+        <ul class="links inline"><li class="comment-reply first last"><a href="http://crossfunctional.net/comment/reply/114/770">reply</a></li>
+</ul>      </div>
+        
+    <p class="comment-permalink">
+      <a href="http://crossfunctional.net/comment/770#comment-770" class="permalink" rel="bookmark">Permalink</a>    </p>
+    
+  <div class="cornerstone comm-cs1"></div><div class="cornerstone comm-cs2"></div>
+  </div><!-- end .meta -->
+
+  <div class="content">
+                <h3 class="title comment-title"><a href="http://crossfunctional.net/comment/770#comment-770" class="permalink" rel="bookmark">Author of Composer had some ideas too ..</a></h3>
+                  <span rel="sioc:reply_of" resource="/blog/2013/may/indefinitive-guide-composer-drupal-8" class="rdf-meta"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Has everyone watched <a href="http://munich2012.drupal.org/content/drupal-has-dependencies-lets-manage-them">http://munich2012.drupal.org/content/drupal-has-dependencies-lets-manage-them</a> where the author of Composer talks about Composer and drupal 8 using it (and that Composer had been oddly placed in a subdirectory of the project).<br />
+I prefer his solution, move it up all the way to the root folder and have a global composer with like drupal as a dependancy. I say treat it like .htaccess -- its just configuration of the application in .json structure. Hacking .htaccess is not hacking core. Screwing up .htaccess can also horribly ruin your day ...</p>
+</div></div></div>      <div class="cornerstone comm-cs3"></div><div class="cornerstone comm-cs4"></div><div class="cornerstone comm-cs5"></div>
+  </div>
+
+
+</div><!-- end .comment -->
+      <h2 class="title comment-form">Add new comment</h2>
+    <form class="comment-form clearfix" action="http://crossfunctional.net/comment/reply/114" method="post" id="comment-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Your name </label>
+ <input type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text" />
+</div>
+<div class="form-item form-type-textfield form-item-subject">
+  <label for="edit-subject">Subject </label>
+ <input type="text" id="edit-subject" name="subject" value="" size="60" maxlength="64" class="form-text" />
+</div>
+<div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body"><div id="comment-body-add-more-wrapper"><div class="text-format-wrapper"><div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+  <label for="edit-comment-body-und-0-value">Comment <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper"><textarea class="text-full form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea></div>
+</div>
+<fieldset class="filter-wrapper form-wrapper" id="edit-comment-body-und-0-format"><div class="fieldset-wrapper"><div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help"><p><a href="../filter/tips.html" target="_blank">More information about text formats</a></p></div><div class="form-item form-type-select form-item-comment-body-und-0-format">
+  <label for="edit-comment-body-und-0-format--2">Text format </label>
+ <select class="filter-list wysiwyg form-select" id="edit-comment-body-und-0-format--2" name="comment_body[und][0][format]"><option value="filtered_html" selected="selected">Filtered HTML</option><option value="plain_text">Plain text</option></select>
+</div>
+<div class="filter-guidelines form-wrapper" id="edit-comment-body-und-0-format-guidelines"><div class="filter-guidelines-item filter-guidelines-filtered_html"><h3>Filtered HTML</h3><ul class="tips"><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Allowed HTML tags: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;blockquote&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Lines and paragraphs break automatically.</li></ul></div><div class="filter-guidelines-item filter-guidelines-plain_text"><h3>Plain text</h3><ul class="tips"><li>No HTML tags allowed.</li><li>Web page addresses and e-mail addresses turn into links automatically.</li><li>Lines and paragraphs break automatically.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><input type="hidden" name="form_build_id" value="form-8bAomBjz9lwv7sPCNQUFzS8V433MEn9ckQkYuRRqHCw" />
+<input type="hidden" name="form_id" value="comment_node_blog_form" />
+<div class="form-actions form-wrapper" id="edit-actions"><div class="wrapsubmit-left"><div class="wrapsubmit-right"><input type="submit" id="edit-submit" name="op" value="Save" class="form-submit" /></div></div><div class="wrapsubmit-left"><div class="wrapsubmit-right"><input type="submit" id="edit-preview" name="op" value="Preview" class="form-submit" /></div></div></div></div><div class="cornerstone form-cs1"></div><div class="cornerstone form-cs2"></div><div class="cornerstone form-cs3"></div><div class="cornerstone form-cs4"></div></form>  </div>
+</div>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+
+        
+        
+    </div></div><!-- end .inner --><!-- end #content -->
+
+        <div class="sidebar side-second"><div class="inner sidebar-inner">
+      <div class="region region-sidebar-second">
+    <div id="block-fb-likebox-0" class="block block-fb-likebox block-fb_likebox region-odd even region-count-1 count-2 first last"><div class="block-inner">
+
+
+  <div class="content">
+    
+<iframe
+src="http://www.facebook.com/plugins/likebox.php?href=http://www.facebook.com/crossfunctional&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;bordercolor&amp;stream=false&amp;header=true&amp;height=210&amp;show_border=true&amp;force_wall=false"
+scrolling="no"
+frameborder="0"
+style="border: none; overflow: hidden; width: 292px; height: 210px;"
+allowTransparency="true">
+</iframe>
+  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+<div id="block-views-blog-archive-block" class="block block-views block-views region-even odd region-count-2 count-3  "><div class="block-inner">
+
+  <h2 class="title blocktitle">Monthly archive</h2>
+
+  <div class="content">
+    <div class="view view-blog-archive view-id-blog_archive view-display-id-block view-dom-id-ac8037635efcb37b37495ccf058f2764">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+  <ul class="views-summary">
+      <li><a href="../archive/201305.html">May 2013</a>
+              (1)
+          </li>
+      <li><a href="../archive/201303.html">March 2013</a>
+              (3)
+          </li>
+      <li><a href="../archive/201302.html">February 2013</a>
+              (6)
+          </li>
+      <li><a href="../archive/201301.html">January 2013</a>
+              (1)
+          </li>
+      <li><a href="../archive/201212.html">December 2012</a>
+              (2)
+          </li>
+      <li><a href="../archive/201210.html">October 2012</a>
+              (2)
+          </li>
+      <li><a href="../archive/201209.html">September 2012</a>
+              (2)
+          </li>
+      <li><a href="../archive/201208.html">August 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201207.html">July 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201206.html">June 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201205.html">May 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201204.html">April 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201203.html">March 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201202.html">February 2012</a>
+              (1)
+          </li>
+      <li><a href="../archive/201201.html">January 2012</a>
+              (2)
+          </li>
+      <li><a href="../archive/201112.html">December 2011</a>
+              (3)
+          </li>
+    </ul>
+</div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+    </div></div><!-- end .inner --><!-- end sidebar right -->
+        </div><!-- end .wrapcolumns -->
+    </div><!-- end #main-inner -->
+  </div><!-- end #main -->
+
+  
+    <div class="sooperblocks sooper-full clearfix postblockscolor">
+    <div class="inner sooper-mast clearfix postblockscolor-inner">
+    <div class="sooper-buffer">
+      <div class="region region-postblockscolor">
+    <div id="block-block-6" class="block block-block block-block region-odd even region-count-1 count-4 first last"><div class="block-inner">
+
+
+  <div class="content">
+    <p style="text-align: center;"><img src="../sites/crossfunctional.net/files/styles/thumb_height/public/DA-organisation-120.png" class="footer-logo" /><img src="../sites/crossfunctional.net/files/styles/thumb_height/public/WebsiteSpark-2_bL-fix.png" class="footer-logo" /><img src="../sites/crossfunctional.net/files/styles/thumb_height/public/badge_partner_small.png" alt="Aquia Partner" class="footer-logo" /><a href="http://training.acquia.com/"><img src="../sites/crossfunctional.net/files/styles/thumb_height/public/badge_training_partner_small.png" alt="Aquia Training Partner" target="_blank" class="footer-logo" /></a><img src="../sites/crossfunctional.net/files/styles/thumb_height/public/wsg-logo300px.png" class="footer-logo" alt="WSG logo" /></p>
+  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+    </div><!-- end .sooper-buffer -->
+    </div><!-- end .postblockscolor-inner -->
+  </div><!-- end .postblockscolor -->
+  
+  <div id="footer" class="clearfix sooper-full">
+    <div class="inner sooper-mast clearfix footer-inner">
+            <div class="region region-footer">
+    <div id="block-block-3" class="block block-block block-block region-odd odd region-count-1 count-5 first "><div class="block-inner">
+
+
+  <div class="content">
+    <p style="text-align: center;">© 2013 CrossFunctional | PH: +61 (02) 800 800 99 | ABN: 971 5541 8125</p>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+<div id="block-social-media-links-social-media-links" class="block block-social-media-links block-social_media_links region-even even region-count-2 count-6  last"><div class="block-inner">
+
+
+  <div class="content">
+    <ul class="links social-media-links inline horizontal"><li class="facebook first"><a href="http://www.facebook.com/crossfunctional" title="Facebook"><img typeof="foaf:Image" src="../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/facebook.png" alt="" /></a></li>
+<li class="twitter"><a href="http://www.twitter.com/crossfunctional/" title="Twitter"><img typeof="foaf:Image" src="../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/twitter.png" alt="" /></a></li>
+<li class="linkedin last"><a href="http://www.linkedin.com/company/crossfunctional" title="LinkedIn"><img typeof="foaf:Image" src="../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/linkedin.png" alt="" /></a></li>
+</ul>  </div>
+</div>
+</div><!-- end .inner --><!-- end .block -->
+  </div>
+        </div><!-- end .footer-inner -->
+  </div><!-- end #footer -->
+
+
+
+</body>
+</html>
+  <div class="close"> glqxz9283 sfy39587p10 mnesdcuix7</div>
+  <script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+<script type="text/javascript" src="../sites/crossfunctional.net/files/js/js_loJJMZ-yLpCFnc5Htc8xgIMfdfNbw5E30CdocHWSiaM.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+    <base href='' />
+    <title>Getting Cozy with Dependency Injection</title>
+    <script type="text/javascript" src="../../../../sites/crossfunctional.net/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript" src="../../../../sites/crossfunctional.net/files/js/js_hDg2cAn4kQEMa_Y6cxLCtK3XsiwPV2KxtUxDJKNJ-kc.js"></script>
+<script type="text/javascript" src="../../../../sites/crossfunctional.net/files/js/js_nkHDa6nOs0QuSV6WHpN1pLgWfLDXbkfXkxXdNqcMrCs.js"></script>
+<script type="text/javascript" src="../../../../sites/all/modules/contrib/lightbox2/js/lightbox.js%3F1526796708"></script>
+<script type="text/javascript" src="../../../../sites/crossfunctional.net/files/js/js_guFGDuPO9xwrkA15w3VsEbjP06q_6IsOLkL45LgCWg4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\u002F", "pathPrefix":"", "current_theme":"sooper_synopsis", "theme_path":"\u002Fsites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002F", "fontKit":{"invoke":"h1, h2, h3, h4, h5, h6, .cufon .content, p.mission, p.slogan, .views-field-title, legend:not(.collapse-processed)"}, "sooperfish":{"invoke":"#header \u003E div.inner \u003E ul.menu", "delay":"500", "dualColumn":"5", "tripleColumn":"12", "sooperfishWidth":"200", "speedShow":"500", "easingShow":"swing", "speedHide":"500", "easingHide":"swing"}, "slideshowKit":{"invoke":"div.slideshow div\u003Eul", "fx":"scrollHorz", "timeout":"8000", "continuous":"0", "speed":"500", "pagerEvent":"mouseover", "easing":"linear", "random":"0", "pause":"0", "pauseOnPagerHover":"1", "delay":"0"}, "ajaxPageState":{"theme":"sooper_synopsis", "theme_token":"nuQ9E0Uhyj2LQUmT5metvTCSpYpyYPfK9pHtd3cjOKA", "js":{"misc\u002Fjquery.js":1, "misc\u002Fjquery.once.js":1, "misc\u002Fdrupal.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshCore.js":1, "sites\u002Fall\u002Flibraries\u002Fsyntaxhighlighter_3.0.83\u002Fscripts\u002FshBrushPhp.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fjquery.easing-sooper.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Finvoke-twitter-cycle.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.equalHeights.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Fcufon-yui.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Ffonts\u002FSapir.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-fontkit\u002Finvoke-cufon.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Fjquery.sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-dropdownkit\u002Finvoke-sooperfish.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Fjquery.cycle.all.min.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Ffeatures\u002Fsooper-slideshowkit\u002Finvoke-SlideshowKit.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002Fslidedown-behaviour.js":1, "sites\u002Fall\u002Fthemes\u002Fsooper_synopsis\u002Fscripts\u002Fmisc\u002FjQuery.bgFade.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Fauto_image_handling.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fjs\u002Flightbox.js":1, "sites\u002Fall\u002Fmodules\u002Fcontrib\u002Fviews_slideshow\u002Fjs\u002Fviews_slideshow.js":1}}, "lightbox2":{"rtl":0, "file_path":"\u002F(\u005Cw\u005Cw\u002F)public:\u002F", "default_image":"\u002Fsites\u002Fall\u002Fmodules\u002Fcontrib\u002Flightbox2\u002Fimages\u002Fbrokenimage.jpg", "border_size":10, "font_color":"000", "box_color":"fff", "top_position":"", "overlay_opacity":"0.8", "overlay_color":"000", "disable_close_click":1, "resize_sequence":0, "resize_speed":400, "fade_in_speed":400, "slide_down_speed":600, "use_alt_layout":0, "disable_resize":1, "disable_zoom":0, "force_show_nav":0, "show_caption":1, "loop_items":0, "node_link_text":"View Image Details", "node_link_target":0, "image_count":"Image !current of !total", "video_count":"Video !current of !total", "page_count":"Page !current of !total", "lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\u002Fkbd\u003E\u003C\u002Fa\u003E to close", "download_link_text":"", "enable_login":false, "enable_contact":false, "keys_close":"c x 27", "keys_previous":"p 37", "keys_next":"n 39", "keys_zoom":"z", "keys_play_pause":"32", "display_image_size":"original", "image_node_sizes":"(\u005C.thumbnail)", "trigger_lightbox_classes":"img.thumbnail, img.image-thumbnail", "trigger_lightbox_group_classes":"", "trigger_slideshow_classes":"", "trigger_lightframe_classes":"", "trigger_lightframe_group_classes":"", "custom_class_handler":0, "custom_trigger_classes":"", "disable_for_gallery_lists":1, "disable_for_acidfree_gallery_lists":true, "enable_acidfree_videos":true, "slideshow_interval":5000, "slideshow_automatic_start":0, "slideshow_automatic_exit":0, "show_play_pause":1, "pause_on_next_click":0, "pause_on_previous_click":1, "loop_slides":0, "iframe_width":600, "iframe_height":400, "iframe_border":1, "enable_video":0}});
+//--><!]]>
+</script>
+        <meta name='robots' content='noindex, nofollow' />
+    <link rel='shortcut icon' href='../../../../sites/crossfunctional.net/files/cf-favicon.png' type='image/x-icon' />
+    <link type="text/css" rel="stylesheet" href="../../../../sites/crossfunctional.net/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../../sites/crossfunctional.net/files/css/css_K8fRaarJVpmwdJlS1tED2qb8vJSkBNe9xzCiZodamcg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../../sites/crossfunctional.net/files/css/css_FyTyOQ8IbzTJGjysHUWdi7T17SELMXyTvmA4_eha_w8.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie8fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie7fix.css?p90jql" media="all" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" href="http://crossfunctional.net/sites/all/themes/sooper_synopsis/css/ie6fix.css?p90jql" media="all" />
+<![endif]-->
+  </head>
+  <body>
+        <div class="print-logo"><img class="print-logo" id="logo" typeof="foaf:Image" src="../../../../sites/crossfunctional.net/files/cf-logo-transparent_1.png" alt="CrossFunctional" /></div>
+    <div class="print-site_name">Published on <em class="placeholder">CrossFunctional</em> (<a href="../../../../index.html">http://crossfunctional.net</a>)</div>
+    <p />
+    <div class="print-breadcrumb"><a href="../../../../index.html">Home</a> &gt; Getting Cozy with Dependency Injection</div>
+    <hr class="print-hr" />
+    <div class="print-content"><div class="ds-2col-stacked-fluid node node-blog view-mode-print clearfix">
+
+  
+      <div class="group-header">
+      <span class="username" xml:lang="" about="/users/piers" typeof="sioc:UserAccount" property="foaf:name" datatype="">Piers</span><div class="field field-name-post-date field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">2013-03-28 11:19</div></div></div>    </div>
+  
+      <div class="group-left">
+      <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><span style="line-height: 1.538em;"><a href="../../../../blog/2013/mar/symfony-components-in-drupal-8.html">Tuning into</a> <span class="print-footnote">[1]</span> some of the discussion on Drupal 8’s new additions, you may have heard about the <a href="http://symfony.com/doc/2.1/components/dependency_injection/index.html">Dependency Injection Component</a> <span class="print-footnote">[2]</span> from the Symfony project. Its inclusion is one of the many architectural changes helping Drupal modernise its approach to code organization.</span></p><p>In this brief introduction, I'll endeavour to explain the concept of Dependency Injection, and see how it impacts our code, hopefully demystifying a topic which is simpler than you might think.<!--break--></p><h2>What is Dependency Injection?</h2><p><span style="line-height: 1.538em;">If you're not sure what Dependency Injection is, I'm not surprised. It's a simple concept that lends itself to complicated explanations. Possibly because of the complicated and varying nomenclature being used around it and other closely linked concepts?</span></p><p><span style="line-height: 1.538em;">Let’s see the sort of definition I might be guilty of rattling off:</span></p><blockquote><p>Dependency injection is a software design pattern that allows removing hard-coded dependencies and making it possible to change them, whether at run-time or compile-time.</p></blockquote><p>- http://en.wikipedia.org/wiki/Dependency_injection</p><p>I think <a href="http://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html">James Shore</a> <span class="print-footnote">[3]</span> said it better with:</p><blockquote><p>Dependency injection means giving an object its instance variables. Really. That's it.</p></blockquote><p>Lets take a look at Dependency Injection in action by comparing this:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class A {
+  public function GetB()&nbsp;
+  {
+    return new B();
+  }
+}&nbsp;</pre><p>To its Dependency Injection enabled version:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class A {
+  private $b;
+
+  public function __construct(B $b)
+  {
+    $this-&gt;b = $b;
+  }
+
+  public function GetB() 
+  {
+    return $this-&gt;b;
+  }
+}&nbsp;</pre><p>That was Dependency Injection in action. In case you missed it, the Dependency Injection in that example takes place in the constructor. The A class is supplied with a dependency, rather than providing a factory for it.</p><p><strong>Dependency Injection is simply the process of providing objects with things they want – put another way, injecting them with things things in which the depend.</strong></p><p>It should be noted here that Dependency Injection is not limited to constructor injection as we saw in the example above. It can be expanded to include property injection (<span class="codetag">$a-&gt;b = new B()</span>) and setter injection (<span class="codetag">$a-&gt;setB(new B())</span>). In this article, I'll focus on constructor injection.</p><h2>Why should we care?</h2><p>The Dependency Injection pattern is interesting since it exposes broader issues about how we write code and structure our software. It brings into question things like:</p><h3>1. Loose Coupling</h3><p>The strength in which a piece of code is tied to others plays an important role in its portability. Strong coupling can mean dependencies can't be changed or swapped with equivalent signatures.</p><p>For instance, the Bar factory method illustrated below means Foo is tied to Bar:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class Foo
+{
+  private function getBar()
+  {
+    return new Bar();
+  }
+} </pre><p>In the next example, a restrictive signature type hint in the constructor will only accept Bars - disallowing other classes with a compatible interface:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class Foo
+{
+ 	public function __construct(Bar $bar)
+ 	{
+ 	}
+} </pre><h3>2. Simplicity and Separation of Concerns (SoC)</h3><p>Classes should aim to be restricted to core responsibilities. Simplicity is key. Large complex classes may indicate a bloating problem. Proper use of Dependency Injection helps us refactor code to smaller, more decoupled classes.</p><p>In the following example we can see this issue in play. The Command class has a factory (<span class="codetag">-&gt;getFileSystem()</span>) and configuration getter (<span class="codetag">-&gt;getConfig($token)</span>). Chances are that command knows way more about both configuration and building a FileSystem object than it should.</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class Command
+{
+ 	private function getFileSystem()
+ 	{
+    return new FileSystem($this-&gt;getConfig('project_storage_root', $this-&gt;getConfig('env'));
+ 	}
+
+ 	private function getConfig($token)
+ 	{
+    $config = new Config(__DIR__ . '/config.yml')
+    return $config-&gt;get($token);
+ 	}
+} </pre><p><span style="line-height: 1.538em;">We can improve this by using Dependency Injection. A <span class="codetag">FileSystem</span> object should be given to Command. With few questions asked. Only that the supplied object conforms specified interface (<span class="codetag">FileSystemInterface</span>).</span></p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class Command
+{
+ 	private $fs;
+
+ 	public function __construct(FileSystemInterface $fs)
+ 	{
+    $this-&gt;fs = $fs;
+ 	}
+
+ 	private function getFileSystem($token)
+ 	{
+    return $fs;
+ 	}
+} </pre><p><span style="line-height: 1.538em;">We have improved our code by simplifying it and adhering to a policy of SoC.</span></p><h3>3. Testability of code</h3><p>With simpler more decoupled code, we increase our ability to effectively test it. To test the code used in the previous example, we have no need for a functional file system. For our unit tests we may inject a mock object which implements FileSystemInterface.</p><p>For example we may deliver something like the following:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">class FileSystemFake implements FileSystemInterface
+{
+	public function write($filename, $location) {
+		// do nothing, this is only a stub.
+	}
+} </pre><p><span style="line-height: 1.538em;">Now we have an object which can be passed to Command during unit testing, without worrying about what FileSystemInterface implementations do. After all, if we are testing Command, we have no interest in complicating our tests by requiring a file system, configuration etc.</span></p><h2>What Dependency Injection Isn't</h2><p>To clarify any misconceptions we thought it might be useful discussing what Dependency Injection isn’t.</p><h3>1. DI is not the same as DI Containers</h3><p><span style="line-height: 1.538em;">The examples used so far have omitted a commonly discussed side topic: Dependency Injection Containers. These seek to provide an elegant way of handling large dependency maps. Take the following for example:</span></p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">$transport = new SmtpTransport('mail.example.com', 'myUser', 'myPassword');
+$messageManager = new MessageManager($transport);
+$orderManager = new OrderReport('Acme\Entity\Order', 'Acme\Math\Tax', $messageManager); </pre><p><span style="line-height: 1.538em;">It's not hard to see how over many classes this could grow into a source of complexity. Instead of manually instantiating classes, Dependency Injection Containers provide a framework by which dependencies can be mapped, then objects built and are returned on request.</span></p><p>For example, the following equates to the previous example - but using a container:</p><pre class="brush: php; auto-links: true; collapse: false; first-line: 1; html-script: false; smart-tabs: true; tab-size: 4; toolbar: true; codetag">$orderManager = $dependencyContainer['order.manager']; </pre><p>How is the Container made aware of the map? Typically, Dependency Injection Containers are used in conjunction with a configuration system which feeds information about objects and parameters straight into the container framework. Usually this includes an XML or YAML configuration store being processed by container building logic.</p><p>Drupal 8 is making use of Dependency Injection Containers. You can see it in action here:</p><p><span class="codetag">&lt;project root&gt;/drupal8/core/lib/Drupal/Core/CoreBundle.php</span> (<a href="https://github.com/drupal/drupal/blob/8.x/core/lib/Drupal/Core/CoreBundle.php">github</a> <span class="print-footnote">[4]</span>)</p><p>To be clear, Dependency Injection is not the same as Dependency Injection Containers. You may use Dependency Injection without a Container. You will gain the most benefit from Dependency Injection Containers in applications with significantly large Dependency maps.</p><h3>2. Dependency Injection is not Overloading</h3><p>Dependency Injection and Overloading are two very different things. This is true for both PHP’s concept of overloading and the broader coding worlds concept of overloading.</p><p>If your objective is to overwrite a specific methods in a class, Dependency Injection and DI Containers may help. Swapping an injected dependency with your own compatible implementation will be simpler so long as the surrounding architecture has been developed with good Dependency Injection principles. If you’re lucky, a configurable DI Container framework will be the icing on the cake.</p><h3>3. Finally, Dependency Injection is not bullet proof</h3><p>Dependency Injection does not equate to good code. Sorry, that part is still up to you. Just as it can be used as a technique for improvement, it can also be a tool of evil. Use it wisely and be mindful of the refactoring techniques and general principles mentioned.</p><p>Remember that these points should kept in mind:</p><ul><li><span style="line-height: 1.538em;">tight coupling can be restrictive, so try to decouple where possible and reasonable;</span></li><li><span style="line-height: 1.538em;">keep your classes clean, lean and restricted to their own requirements;</span></li><li><span style="line-height: 1.538em;">unit testing is critical so make it testable.</span></li></ul><h2>Closing thoughts</h2><p>Dependency Injection is on one hand a given, and on the other an opportunity. Remember that implementation is key. While Dependency Injection describes a stupidly simple process, it’s through careful consideration, understanding and sensible application it really shines.</p><p>I hope you've found this brief introduction useful. Good luck and happy coding!</p><h2>Where to now?</h2><p>Don’t stop here. The following fantastic resources and great reading fodder:</p><ul><li><span style="line-height: 1.538em;"><a href="http://martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern - Martin Fowler</a> <span class="print-footnote">[5]</span><br></span></li><li><span style="line-height: 1.538em;"><a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection - Wikipedia </a> <span class="print-footnote">[6]</span><br></span></li><li><span style="line-height: 1.538em;"><a href="http://fabien.potencier.org/article/11/what-is-dependency-injection">What is Dependency Injection? - Fabien Potencier </a> <span class="print-footnote">[7]</span><br></span></li><li><span style="line-height: 1.538em;"><a href="http://www.procata.com/talks/phptek-may2007-dependency.pdf">Dependency Injection - Jeff Moore </a> <span class="print-footnote">[8]</span><br></span></li><li><span style="line-height: 1.538em;"><a href="http://symfony.com/doc/current/components/dependency_injection/introduction.html">The Dependency Injection Component - Symfony Documentation</a> <span class="print-footnote">[9]</span></span></li><li><span style="line-height: 1.538em;"><a href="http://drupal.org/project/dependencyinjection">Dependency Injection - Drupal Project </a> <span class="print-footnote">[10]</span><br></span></li></ul><h2>DrupalCon Portland</h2><p>If you'd like to learn more about how Dependency Injection is used in Drupal 8, you can also catch us in DrupalCon Portland this May, where we'll be giving a training session on Drupal 8 and Symfony. <a href="http://portland2013.drupal.org/node/3723">Registration is now open</a> <span class="print-footnote">[11]</span>; tickets are going fast, so get in quick!</p></div></div></div><div class="field field-name-field-blog-terms field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="../../../../tags/drupal-8.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal 8</a> <span class="print-footnote">[12]</span></div><div class="field-item odd"><a href="../../../../tags/symfony.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Symfony</a> <span class="print-footnote">[13]</span></div><div class="field-item even"><a href="../../../../tags/php.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">PHP</a> <span class="print-footnote">[14]</span></div><div class="field-item odd"><a href="../../../../tags/symfony-components.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Symfony Components</a> <span class="print-footnote">[15]</span></div><div class="field-item even"><a href="../../../../tags/drupal-planet.html" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal Planet</a> <span class="print-footnote">[16]</span></div></div></div>    </div>
+  
+      <div class="group-right">
+      &nbsp;    </div>
+  
+      <div class="group-footer">
+      &nbsp;    </div>
+  </div></div>
+    <div class="print-footer">
+<div id="block-block-3" class="block block-block block-block region-odd odd region-count-1 count-1 first "><div class="block-inner">
+
+
+  <div class="content">
+    <p>© 2013 CrossFunctional | PH: +61 (02) 800 800 99 | ABN: 971 5541 8125</p>  </div>
+</div>
+</div>
+<div id="block-social-media-links-social-media-links" class="block block-social-media-links block-social_media_links region-even even region-count-2 count-2  last"><div class="block-inner">
+
+
+  <div class="content">
+    <ul class="links social-media-links inline horizontal"><li class="facebook first"><a href="http://www.facebook.com/crossfunctional" title="Facebook"><img typeof="Image" src="../../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/facebook.png" alt="" /></a></li>
+<li class="twitter"><a href="http://www.twitter.com/crossfunctional/" title="Twitter"><img typeof="Image" src="../../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/twitter.png" alt="" /></a></li>
+<li class="linkedin last"><a href="http://www.linkedin.com/company/crossfunctional" title="LinkedIn"><img typeof="Image" src="../../../../sites/all/modules/contrib/social_media_links/libraries/elegantthemes_icons/PNG/linkedin.png" alt="" /></a></li>
+</ul>  </div>
+</div>
+</div>
+</div>
+    <hr class="print-hr" />
+    <div class="print-source_url"><strong>Source URL:</strong> <a href="../../../../blog/2013/mar/getting-cozy-dependency-injection.html">http://crossfunctional.net/blog/2013/mar/getting-cozy-dependency-injection</a></div>
+    <div class="print-links"><p><strong>Links:</strong><br />[1] http://crossfunctional.net/blog/2013/mar/symfony-components-in-drupal-8<br />
+[2] http://symfony.com/doc/2.1/components/dependency_injection/index.html<br />
+[3] http://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html<br />
+[4] https://github.com/drupal/drupal/blob/8.x/core/lib/Drupal/Core/CoreBundle.php<br />
+[5] http://martinfowler.com/articles/injection.html<br />
+[6] http://en.wikipedia.org/wiki/Dependency_injection<br />
+[7] http://fabien.potencier.org/article/11/what-is-dependency-injection<br />
+[8] http://www.procata.com/talks/phptek-may2007-dependency.pdf<br />
+[9] http://symfony.com/doc/current/components/dependency_injection/introduction.html<br />
+[10] http://drupal.org/project/dependencyinjection<br />
+[11] http://portland2013.drupal.org/node/3723<br />
+[12] http://crossfunctional.net/tags/drupal-8<br />
+[13] http://crossfunctional.net/tags/symfony<br />
+[14] http://crossfunctional.net/tags/php<br />
+[15] http://crossfunctional.net/tags/symfony-components<br />
+[16] http://crossfunctional.net/tags/drupal-planet<br />
+</p></div>
+    <script type="text/javascript" src="../../../../sites/crossfunctional.net/files/js/js_Rk5YIkK6m2gKTGH-GrMu0pM_PlMKXnI0ktQUgXw1XgA.js"></script>
+  </body>
+</html>

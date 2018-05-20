@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://crossfunctional.net/taxonomy/term/7/all" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <channel>
+    <title>Drupal 7</title>
+    <link>http://crossfunctional.net/taxonomy/term/7/all</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>The Travel Corporation</title>
+    <link>http://crossfunctional.net/portfolio/travel-corporation</link>
+    <description>&lt;div class=&quot;field field-name-field-project-date-launched field-type-date field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Launched:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;span class=&quot;date-display-single&quot; property=&quot;dc:date&quot; datatype=&quot;xsd:dateTime&quot; content=&quot;2012-01-18T00:00:00+11:00&quot;&gt;Wed, 01/18/2012&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-project-url field-type-link-field field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;URL:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;http://www.thetravelcorporation.com&quot; target=&quot;_blank&quot;&gt;http://www.thetravelcorporation.com&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 18 Jan 2012 01:15:30 +0000</pubDate>
+ <dc:creator>admin</dc:creator>
+ <guid isPermaLink="false">60 at http://crossfunctional.net</guid>
+  </item>
+  <item>
+    <title>UNSW launches new site with CrossFunctional support</title>
+    <link>http://crossfunctional.net/blog/2011/dec/unsw-launches-new-site-crossfunctional-support</link>
+    <description>&lt;div class=&quot;field field-name-title field-type-ds field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;dc:title&quot;&gt;&lt;h2&gt;UNSW launches new site with CrossFunctional support&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-post-date field-type-ds field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tuesday, December 13, 2011 - 17:33&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-author field-type-ds field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;admin&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot; property=&quot;content:encoded&quot;&gt;&lt;p&gt;The &lt;a href=&quot;http://www.unsw.edu.au/&quot;&gt;University of New South Wales&lt;/a&gt; has relauched its web site on a Drupal 7 platform, developed in collaboration with CrossFunctional.&lt;/p&gt;&lt;p&gt;In addition to helping to architect and rebuild the site, CrossFunctional provided training and support throughout development. CrossFunctional team members worked closely with internal staff during the site build.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-node-link field-type-ds field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/blog/2011/dec/unsw-launches-new-site-crossfunctional-support&quot;&gt;Read more&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-blog-terms field-type-taxonomy-term-reference field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/drupal-7&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;Drupal 7&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/unsw&quot; typeof=&quot;skos:Concept&quot; property=&quot;rdfs:label skos:prefLabel&quot; datatype=&quot;&quot;&gt;UNSW&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Tue, 13 Dec 2011 06:33:39 +0000</pubDate>
+ <dc:creator>admin</dc:creator>
+ <guid isPermaLink="false">55 at http://crossfunctional.net</guid>
+  </item>
+  </channel>
+</rss>

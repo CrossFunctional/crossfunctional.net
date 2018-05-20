@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://crossfunctional.net/taxonomy/term/3/all" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <channel>
+    <title>Drupal 6</title>
+    <link>http://crossfunctional.net/taxonomy/term/3/all</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>PushStart</title>
+    <link>http://crossfunctional.net/portfolio/pushstart</link>
+    <description>&lt;div class=&quot;field field-name-field-project-client field-type-node-reference field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Client:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/client/pushstart&quot;&gt;PushStart&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-field-project-url field-type-link-field field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;URL:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;http://pushstart.com.au/&quot; target=&quot;_blank&quot;&gt;http://pushstart.com.au/&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Mon, 05 Dec 2011 23:45:39 +0000</pubDate>
+ <dc:creator>admin</dc:creator>
+ <guid isPermaLink="false">34 at http://crossfunctional.net</guid>
+  </item>
+  <item>
+    <title>SPAA Conference Network</title>
+    <link>http://crossfunctional.net/portfolio/spaa-conference-network</link>
+    <description>&lt;div class=&quot;field field-name-field-project-client field-type-node-reference field-label-above&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Client:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/client/screen-producers-association-australia&quot;&gt;Screen Producers Association of Australia&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Mon, 21 Nov 2011 00:24:08 +0000</pubDate>
+ <dc:creator>admin</dc:creator>
+ <guid isPermaLink="false">32 at http://crossfunctional.net</guid>
+  </item>
+  </channel>
+</rss>
